@@ -1,5 +1,7 @@
 package com.ncsl.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,5 +22,11 @@ public class StudentController {
 		studentRepository.saveAndFlush(s);
 		Student s2 = studentRepository.findByName(s.getName());
 		return s2;
+	}
+	
+	@GetMapping("/students")
+	public List<Student> allstudents(){
+		List<Student> s = studentRepository.findAll();
+		return s;
 	}
 }
