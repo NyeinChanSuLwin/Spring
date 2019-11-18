@@ -21,9 +21,11 @@ public class DemoApplication {
     @RequestMapping("/")
     @ResponseBody
     String home() {
-      return "Hello World!";
+      return helloworld();
     }
-
+    String helloworld() {
+    	return "hello World";
+    }
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
